@@ -1,11 +1,11 @@
-import Problemas.Racional;
+import Problemas.Punto2D;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Racional r1 = new Racional(2, 6);
-        Racional r2 = new Racional(1, 3);
-        Racional suma = r1.suma(r2);
-        System.out.printf("La suma de %s + %s = %s\n", r1, r2, suma);
-        System.out.println(r1.equals(r2));
+        Punto2D p1 = new Punto2D(3, 2.5);
+
+        System.out.println("X: " + p1.getX());
+        System.out.println("Y: " + p1.getY());
+
     }
 }
