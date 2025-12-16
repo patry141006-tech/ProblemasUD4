@@ -6,7 +6,7 @@ public class Empleados {
     private double sueldo;
     private static String password;
 
-    public Empleados(String nombre, int edad, double sueldo) {
+    public Empleados(String nombre, int edad, double sueldo) throws IllegalArgumentException {
         if (nombre == null || nombre.trim().isEmpty()) {
             throw new IllegalArgumentException("El nombre es obligatorio");
         }
