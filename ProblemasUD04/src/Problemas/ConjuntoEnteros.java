@@ -43,9 +43,77 @@ public class ConjuntoEnteros {
         return elementos.contains(e);
     }
 
+    public ConjuntoEnteros union(ConjuntoEnteros c) {
+        ConjuntoEnteros resultado = new ConjuntoEnteros();
+
+        for (int e : elementos) {
+            resultado.inserta(e);
+        }
+
+        if (c != null) {
+            for (int e : c.elementos) {
+                resultado.inserta(e);
+            }
+        }
+
+        return resultado;
+    }
+
+    public ConjuntoEnteros interseccion(ConjuntoEnteros c) {
+        ConjuntoEnteros resultado = new ConjuntoEnteros();
+
+        if (c != null) {
+            for (int e : elementos) {
+                if (c.pertenece(e)) {
+                    resultado.inserta(e);
+                }
+            }
+        }
+
+        return resultado;
+    }
+
+    public ConjuntoEnteros menos(ConjuntoEnteros c) {
+        ConjuntoEnteros resultado = new ConjuntoEnteros();
+
+        for (int e : elementos) {
+            if (c == null || !c.pertenece(e)) {
+                resultado.inserta(e);
+            }
+        }
+
+        return resultado;
+    }
+
     @Override
     public String toString() {
-        return elementos.toString();
+        String resultado = "[";
+
+        for (int i = 0; i < elementos.size(); i++) {
+            resultado += elementos.get(i);
+            if (i < elementos.size() - 1) {
+                resultado += ", ";
+            }
+        }
+
+        resultado += "]";
+        return resultado;
+    }
+
+    public boolean equals(ConjuntoEnteros otro) {
+        if (otro == null)
+            return false;
+
+        if (this.cardinal() != otro.cardinal())
+            return false;
+
+        for (int e : this.elementos) {
+            if (!otro.pertenece(e)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 }

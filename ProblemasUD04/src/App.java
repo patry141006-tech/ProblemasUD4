@@ -1,13 +1,14 @@
-import Problemas.Empleados;
+import Problemas.ConjuntoEnteros;
 
 public class App {
-    public static void main(String[] args)  {
-        Empleados.setPassword("1234");
-        Empleados Empleado1 = new Empleados("Juan", 76, 1200);
-        Empleados Empleado2 = new Empleados("Ana", 26, 1900);
-        System.out.println(Empleado1.getSueldo("1234"));
-        System.out.println(Empleado1.getDatos("1234"));
-        System.out.println(Empleado2.getDatos("1234"));
+    public static void main(String[] args) {
+        ConjuntoEnteros c1 = new ConjuntoEnteros(1, 2, 3);
+        ConjuntoEnteros c2 = new ConjuntoEnteros(3, 2, 1);
+
+        System.out.println(c1.equals(c2)); // true
+
+        ConjuntoEnteros c3 = new ConjuntoEnteros(1, 2);
+        System.out.println(c1.equals(c3)); // false
 
     }
 }
