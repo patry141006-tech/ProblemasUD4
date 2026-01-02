@@ -10,8 +10,7 @@ public class ConjuntoEnteros {
         elementos = new ArrayList<>();
     }
 
-    // Array de enteros, pero si hay varios numeros sin tener un array?
-    public ConjuntoEnteros(int[] valores) {
+    public ConjuntoEnteros(int... valores) {
         this();
 
         if (valores != null) {
@@ -32,6 +31,14 @@ public class ConjuntoEnteros {
     public void inserta(int e) {
         if (e > 0 && !elementos.contains(e)) {
             elementos.add(e);
+        }
+    }
+
+    public void inserta(int... valores) {
+        if (valores != null) {
+            for (int v : valores) {
+                inserta(v);
+            }
         }
     }
 
