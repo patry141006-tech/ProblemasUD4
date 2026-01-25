@@ -1,8 +1,21 @@
 package Problemas.EjerciciosTema5.Problemas.Ejercicios;
 
-public class Circulo {
+public class Circulo extends Figura2D {
     double radio;
-    double area= Math.PI * (radio * radio);
 
-    double perimetro= 2 * Math.PI * radio;
+    public Circulo(double radio, int x, int y) {
+        this.radio = radio;
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public double area() {
+        return Math.PI * radio * radio;
+    }
+
+    @Override
+    public double perimetro() {
+        return 2 * Math.PI * radio;
+    }
 }

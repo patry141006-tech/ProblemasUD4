@@ -59,4 +59,14 @@ public class Punto2D {
         return false;
     }
 
+    public double area() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'area'");
+    }
+
+    public double perimetro() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'perimetro'");
+    }
+
 }
