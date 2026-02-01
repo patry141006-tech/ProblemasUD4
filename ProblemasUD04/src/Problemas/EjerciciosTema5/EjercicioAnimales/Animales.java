@@ -1,5 +1,8 @@
 package Problemas.EjerciciosTema5.EjercicioAnimales;
 
-public interface Animales {
+import java.time.LocalDateTime;
 
+public interface Animales {
+    LocalDateTime nace= null;
+    public void nace();
 }
