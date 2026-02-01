@@ -1,4 +1,4 @@
-package Problemas.EjerciciosTema5.Problemas.Ejercicios;
+package Problemas.EjerciciosTema5;
 
 public class Mascotas {
     int numPatas;
@@ -11,6 +11,14 @@ public class Mascotas {
         this.nombre = nombre;
         this.voz = voz;
         this.peso = peso;
+    }
+
+    public Mascotas(Mascotas mas) {
+        this.numPatas = mas.getNumPatas();
+        this.peso = mas.getPeso();
+        this.nombre = mas.getNombre();
+        this.voz = mas.getVoz();
+
     }
 
     public int getNumPatas() {

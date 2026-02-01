@@ -1,6 +1,8 @@
-package Problemas.EjerciciosTema5.Problemas.Ejercicios;
+package Problemas.EjerciciosTema5;
 
-public class Intervalo {
+import java.time.LocalDateTime;
+
+public class Intervalo implements Localizable {
     private int menor, mayor;
 
     public Intervalo(int menor, int mayor) throws Exception {
@@ -47,7 +49,16 @@ public class Intervalo {
             return true;
         } else {
             return false;
-
         }
+    }
+
+    public Intervalo() throws Exception {
+        LocalDateTime ahora = LocalDateTime.now();
+
+        int d1 = ahora.getHour() + ahora.getSecond() * 10;
+        int d2 = ahora.getMonthValue() * ahora.getMinute();
+
+        this(d1,d2);
+
     }
 }

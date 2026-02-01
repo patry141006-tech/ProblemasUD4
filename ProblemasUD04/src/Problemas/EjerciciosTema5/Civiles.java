@@ -1,4 +1,4 @@
-package Problemas.EjerciciosTema5.Problemas.Ejercicios;
+package Problemas.EjerciciosTema5;
 
 public class Civiles implements Aeronaves {
     int numMaxPasajeros;

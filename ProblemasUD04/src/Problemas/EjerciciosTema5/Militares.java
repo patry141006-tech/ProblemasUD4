@@ -1,4 +1,4 @@
-package Problemas.EjerciciosTema5.Problemas.Ejercicios;
+package Problemas.EjerciciosTema5;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Problemas.EjerciciosTema5.Problemas.Ejercicios;
+package Problemas.EjerciciosTema5;
 
 public class Rectangulo extends Figura2D {
     double base, altura;

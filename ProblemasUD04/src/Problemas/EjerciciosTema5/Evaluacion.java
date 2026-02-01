@@ -1,4 +1,4 @@
-package Problemas.EjerciciosTema5.Problemas.Ejercicios;
+package Problemas.EjerciciosTema5;
 
 public class Evaluacion {
     private int eval1, eval2, eval3;
