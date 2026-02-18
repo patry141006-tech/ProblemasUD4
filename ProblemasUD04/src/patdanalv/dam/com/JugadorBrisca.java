@@ -1,6 +1,5 @@
 package patdanalv.dam.com;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class JugadorBrisca {
@@ -8,10 +7,9 @@ public class JugadorBrisca {
     private int puntos;
     private List<CartaBrisca> cartas;
 
+    
     public JugadorBrisca(boolean humano) {
         this.humano = humano;
-        this.puntos = 0;
-        this.cartas = new ArrayList<>();
     }
 
     public void agregarCarta(CartaBrisca carta) {

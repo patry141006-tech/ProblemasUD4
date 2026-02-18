@@ -27,37 +27,40 @@ public class Carta {
     @Override
     public String toString() {
         if (numero == 1) {
-            return "{ AS de " + palo + "}";
+            return "{ AS de " + palo + " }";
         } else if (numero == 10) {
-            return "{ SOTA de" + palo + "}";
+            return "{ SOTA de " + palo + " }";
         } else if (numero == 11) {
-            return "{ CABALLO de" + palo + "}";
+            return "{ CABALLO de " + palo + " }";
         } else if (numero == 12) {
-            return "{ REY de" + palo + "}";
+            return "{ REY de " + palo + " }";
         } else {
-            return "{ " + numero + "de" + palo + "}";
+            return "{ " + numero + " de " + palo + "}";
         }
     }
-/* 
-    public void dibujar(int x, int y){
-        setcursor(x, y++);
-        texto(NEGRO); 
-        fondo(BLANCO);
-        System.out.print("┌──────┐");
-        setcursor(x, y++);
-        System.out.printf("│%2d │", numero);
-        switch(palo){
-        case Palo.ESPADAS: ... break;
-    }
-    setcursor(x, y++);
-    System.out.print("└──────┘");
-    }
-}
-*/
 
-    public void printReverso(int x, int y){
+    /*
+     * public void dibujar(int x, int y){
+     * setcursor(x, y++);
+     * texto(NEGRO);
+     * fondo(BLANCO);
+     * System.out.print("┌──────┐");
+     * setcursor(x, y++);
+     * System.out.printf("│%2d │", numero);
+     * switch(palo){
+     * case Palo.ESPADAS: ... break;
+     * }
+     * setcursor(x, y++);
+     * System.out.print("└──────┘");
+     * }
+     * }
+     */
+    public void print(int x, int y) {
 
     }
 
-    
+    public void printReverso(int x, int y) {
+
+    }
+
 }
