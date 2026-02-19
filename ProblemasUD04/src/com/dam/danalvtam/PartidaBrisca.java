@@ -1,4 +1,4 @@
-package patdanalv.dam.com;
+package com.dam.danalvtam;
 
 import java.util.ArrayList;
 import java.util.List;

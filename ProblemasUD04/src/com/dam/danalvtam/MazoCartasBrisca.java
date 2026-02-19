@@ -1,4 +1,4 @@
-package patdanalv.dam.com;
+package com.dam.danalvtam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +61,7 @@ public class MazoCartasBrisca {
         }
     }
 
-    public CartaBrisca getCartas(int i) {
+    public CartaBrisca getCarta(int i) {
         if (marcaAgua == 0) {
             return null;
         } else {

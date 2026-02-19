@@ -1,4 +1,4 @@
-package patdanalv.dam.com;
+package com.dam.danalvtam;
 
 public class CartaBrisca extends Carta implements Comparable<CartaBrisca> {
 
