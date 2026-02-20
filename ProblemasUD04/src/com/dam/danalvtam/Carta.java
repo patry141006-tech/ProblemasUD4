@@ -64,6 +64,39 @@ public class Carta {
 
                 break;
 
+            case Palo.COPAS:
+                System.out.print("│ \\   / │");
+                Amico.cursorXY(x, y++);
+                System.out.print("│  \\ /  │");
+                Amico.cursorXY(x, y++);
+                System.out.print("│   │   │");
+                Amico.cursorXY(x, y++);
+                System.out.print("│ --+-- │");
+                Amico.cursorXY(x, y++);
+                break;
+
+            case Palo.BASTOS:
+                System.out.print("│   /O/ │");
+                Amico.cursorXY(x, y++);
+                System.out.print("│  //   │");
+                Amico.cursorXY(x, y++);
+                System.out.print("│ //    │");
+                Amico.cursorXY(x, y++);
+                System.out.print("│//     │");
+                Amico.cursorXY(x, y++);
+                break;
+
+            case Palo.OROS:
+                System.out.print("│       │");
+                Amico.cursorXY(x, y++);
+                System.out.print("│  ($)  │");
+                Amico.cursorXY(x, y++);
+                System.out.print("│       │");
+                Amico.cursorXY(x, y++);
+                System.out.print("│       │");
+                Amico.cursorXY(x, y++);
+                break;
+
             default:
                 break;
         }
@@ -78,7 +111,25 @@ public class Carta {
 
     }
 
-    public void printReverso(int x, int y) {
+    public static void printReverso(int x, int y) {
+        Amico.texto(0);
+        Amico.cursorXY(x, y++);
+        System.out.print("┌───────┐");
+        Amico.cursorXY(x, y++);
+        System.out.print("│XXXXXXX│");
+        Amico.cursorXY(x, y++);
+        System.out.print("│XXXXXXX│");
+        Amico.cursorXY(x, y++);
+        System.out.print("│XXXXXXX│");
+        Amico.cursorXY(x, y++);
+        System.out.print("│XXXXXXX│");
+        Amico.cursorXY(x, y++);
+        System.out.print("│XXXXXXX│");
+        Amico.cursorXY(x, y++);
+        System.out.print("│XXXXXXX│");
+        Amico.cursorXY(x, y++);
+        System.out.print("└───────┘");
+        Amico.cursorXY(x, y++);
 
     }
 

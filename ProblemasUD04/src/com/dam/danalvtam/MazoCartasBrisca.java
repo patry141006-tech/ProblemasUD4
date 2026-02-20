@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MazoCartasBrisca {
-    private List<CartaBrisca> cartas;
+     List<CartaBrisca> cartas;
     private int marcaAgua;
     final int tamañoBaraja = 40;
 
@@ -20,7 +20,7 @@ public class MazoCartasBrisca {
         this.marcaAgua = 39;
     }
 
-    public List<Integer> barajar() {
+    private List<Integer> barajar() {
         List<Integer> arrayBaraja = new ArrayList<>();
         for (int i = 0; i < tamañoBaraja; i++) {
             while (arrayBaraja.size() < tamañoBaraja) {
@@ -33,12 +33,8 @@ public class MazoCartasBrisca {
         return arrayBaraja;
     }
 
-    public void barajaBarajada() {
+    public void barajarMazo() {
         List<Integer> barajado = barajar();
-
-        for (int bara : barajado) {
-            System.out.println(bara);
-        }
 
         ArrayList<CartaBrisca> cartasBarajadas = new ArrayList<>();
         for (int i = 0; i < barajado.size(); i++) {
