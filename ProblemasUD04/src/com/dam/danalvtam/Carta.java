@@ -42,10 +42,12 @@ public class Carta {
         }
     }
 
-    public void dibujar(int x, int y) {
-        Amico.fondo(2);
+    public void print(int x, int y) {
+        Amico.fondo(Amico.VERDE);
         Amico.texto(0);
         Amico.cursorXY(x, y++);
+        Amico.fondo(Amico.BLANCO);
+
         System.out.print("┌───────┐");
         Amico.cursorXY(x, y++);
         System.out.printf("│%2d     │", numero);
@@ -103,34 +105,29 @@ public class Carta {
         System.out.printf("│     %2d│", numero);
         Amico.cursorXY(x, y++);
         System.out.print("└───────┘");
+        Amico.fondo(Amico.VERDE);
         Amico.cursorXY(x, y++);
+        
 
     }
 
-    public void print(int x, int y) {
-
-    }
-
-    public static void printReverso(int x, int y) {
+    public void printReverso(int x, int y) {
         Amico.texto(0);
         Amico.cursorXY(x, y++);
-        System.out.print("┌───────┐");
-        Amico.cursorXY(x, y++);
-        System.out.print("│XXXXXXX│");
-        Amico.cursorXY(x, y++);
-        System.out.print("│XXXXXXX│");
-        Amico.cursorXY(x, y++);
-        System.out.print("│XXXXXXX│");
-        Amico.cursorXY(x, y++);
-        System.out.print("│XXXXXXX│");
-        Amico.cursorXY(x, y++);
-        System.out.print("│XXXXXXX│");
-        Amico.cursorXY(x, y++);
-        System.out.print("│XXXXXXX│");
-        Amico.cursorXY(x, y++);
-        System.out.print("└───────┘");
-        Amico.cursorXY(x, y++);
+        Amico.fondo(Amico.ROJO);
 
+        System.out.print("┌──────────────┐");
+        Amico.cursorXY(x, y++);
+        System.out.print("│XXXXXXXXXXXXXX│");
+        Amico.cursorXY(x, y++);
+        System.out.print("│XXXXXXXXXXXXXX│");
+        Amico.cursorXY(x, y++);
+        System.out.print("│XXXXXXXXXXXXXX│");
+        Amico.cursorXY(x, y++);
+        System.out.print("└──────────────┘");
+        
+        Amico.fondo(Amico.VERDE);
+        Amico.cursorXY(x, y++);
     }
 
 }

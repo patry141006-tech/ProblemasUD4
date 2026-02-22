@@ -1,13 +1,13 @@
 package com.dam.danalvtam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JugadorBrisca {
     private boolean humano;
     private int puntos;
-    private List<CartaBrisca> cartas;
+    private List<CartaBrisca> cartas= new ArrayList<>();
 
-    
     public JugadorBrisca(boolean humano) {
         this.humano = humano;
     }
@@ -28,5 +28,9 @@ public class JugadorBrisca {
 
     public int getPuntos() {
         return puntos;
+    }
+
+    public CartaBrisca getCartas(int i){
+        return cartas.get(i);
     }
 }

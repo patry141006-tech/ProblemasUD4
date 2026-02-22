@@ -20,7 +20,7 @@ public class MazoCartasBrisca {
         this.marcaAgua = 39;
     }
 
-    private List<Integer> barajar() {
+    private List<Integer> barajarMazo() {
         List<Integer> arrayBaraja = new ArrayList<>();
         for (int i = 0; i < tamañoBaraja; i++) {
             while (arrayBaraja.size() < tamañoBaraja) {
@@ -33,8 +33,8 @@ public class MazoCartasBrisca {
         return arrayBaraja;
     }
 
-    public void barajarMazo() {
-        List<Integer> barajado = barajar();
+    public void barajar() {
+        List<Integer> barajado = barajarMazo();
 
         ArrayList<CartaBrisca> cartasBarajadas = new ArrayList<>();
         for (int i = 0; i < barajado.size(); i++) {
@@ -44,7 +44,7 @@ public class MazoCartasBrisca {
     }
 
     public int cuantasQuedan() {
-        return marcaAgua - this.tamañoBaraja;
+        return marcaAgua ;
     }
 
     public CartaBrisca extraerCarta() {
