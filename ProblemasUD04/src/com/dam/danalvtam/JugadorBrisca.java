@@ -30,7 +30,15 @@ public class JugadorBrisca {
         return puntos;
     }
 
-    public CartaBrisca getCartas(int i){
+    public CartaBrisca getCarta(int i){
         return cartas.get(i);
+    }
+
+    public boolean quedanCartas(){
+        return cartas.size()>0;
+    }
+
+    public void removeCarta(int i){
+        cartas.remove(i);
     }
 }
