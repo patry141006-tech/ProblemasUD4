@@ -92,7 +92,7 @@ public class PartidaBrisca extends MazoCartasBrisca {
                 jugador1Empieza = true;
                 Amico.cursorXY(45, 20);
                 System.out.print("USTED HA GANADO. Pulse ENTER...");
-                if (mazo.cuantasQuedan() > 0) {
+                if (mazo.cuantasQuedan() >= 0) {
                     jugador1.agregarCarta(mazo.extraerCarta());
                     jugador2.agregarCarta(mazo.extraerCarta());
                 }
@@ -102,19 +102,30 @@ public class PartidaBrisca extends MazoCartasBrisca {
                 jugador1Empieza = false;
                 Amico.cursorXY(45, 20);
                 System.out.print("USTED HA PERDIDO. Pulse ENTER...");
-                if (mazo.cuantasQuedan() > 0) {
+                if (mazo.cuantasQuedan() >= 0) {
                     jugador2.agregarCarta(mazo.extraerCarta());
                     jugador1.agregarCarta(mazo.extraerCarta());
                 }
             }
             sca.nextLine();
         }
+        Amico.cursorXY(5, 30);
 
+        System.out.println("PARTIDA FINALIZADA. PUNTUACIÓN FINAL:");
+        System.out.println("JUGADOR: " + jugador1.getPuntos());
+        System.out.println("PROGRAMA: " + jugador2.getPuntos());
+        if (jugador1.getPuntos() > jugador2.getPuntos()) {
+            System.out.println("¡FELICIDADES! HAS GANADO LA PARTIDA.");
+        } else if (jugador1.getPuntos() < jugador2.getPuntos()) {
+            System.out.println("LO SIENTO, HAS PERDIDO LA PARTIDA.");
+        } else {
+            System.out.println("LA PARTIDA HA TERMINADO EN EMPATE.");
+        }
     }
 
     public CartaBrisca juegaPrograma() {
         Random random = new Random();
-        int indiceCartaPrograma = random.nextInt(jugador2.cartas.size() - 1);
+        int indiceCartaPrograma = random.nextInt(jugador2.cartas.size());
         CartaBrisca cartaElegidaMaquina = jugador2.cartas.remove(indiceCartaPrograma);
         cartaElegidaMaquina.print(29, 18);
         return cartaElegidaMaquina;
