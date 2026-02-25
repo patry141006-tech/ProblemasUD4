@@ -109,6 +109,7 @@ public class PartidaBrisca extends MazoCartasBrisca {
             }
             sca.nextLine();
         }
+        sca.close();
         Amico.cursorXY(5, 30);
 
         System.out.println("PARTIDA FINALIZADA. PUNTUACIÓN FINAL:");
