@@ -48,7 +48,7 @@ public class MazoCartasBrisca {
     }
 
     public CartaBrisca extraerCarta() {
-        if (marcaAgua == 0) {
+        if (marcaAgua == -1) {
             return null;
         } else {
             CartaBrisca devolver = cartas.get(marcaAgua);

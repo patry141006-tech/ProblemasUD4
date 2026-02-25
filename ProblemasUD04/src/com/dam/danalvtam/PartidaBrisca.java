@@ -1,5 +1,6 @@
 package com.dam.danalvtam;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -46,11 +47,17 @@ public class PartidaBrisca extends MazoCartasBrisca {
         Amico.cursorXY(27, 17);
         System.out.print("JUGADA PROGRAMA");
 
-        jugador1.getCarta(0).print(2, 3);
-        jugador1.getCarta(1).print(12, 3);
-        jugador1.getCarta(2).print(22, 3);
+        try {
+            jugador1.cartas.get(0).print(2, 3);
+            jugador1.cartas.get(1).print(12, 3);
+            jugador1.cartas.get(2).print(22, 3);
+        } catch (NullPointerException e) {
+            // Capturamos Excepcion de las cartas
+        }
         mazo.getMuestra().print(55, 3);
-        jugador1.getCarta(0).printReverso(40, 5);
+        if (mazo.cuantasQuedan() > 0) { 
+            jugador1.cartas.get(0).printReverso(40, 5);
+        }
 
         if (jugador1Empieza) {
             Amico.cursorXY(5, 12);
@@ -64,7 +71,7 @@ public class PartidaBrisca extends MazoCartasBrisca {
     public void jugar() {
         Scanner sca = new Scanner(System.in);
         repartir();
-        while (jugador1.quedanCartas() || jugador2.quedanCartas()) {
+        while (!jugador1.cartas.isEmpty() || !jugador2.cartas.isEmpty()) {
             Amico.bp();
             pintar();
 
@@ -103,18 +110,27 @@ public class PartidaBrisca extends MazoCartasBrisca {
 
     public CartaBrisca juegaPrograma() {
         Random random = new Random();
-        int indiceCartaPrograma = random.nextInt(2);
-        CartaBrisca cartaElegidaMaquina = jugador2.getCarta(indiceCartaPrograma);
+        int indiceCartaPrograma = random.nextInt(jugador2.cartas.size() - 1);
+        CartaBrisca cartaElegidaMaquina = jugador2.cartas.remove(indiceCartaPrograma);
         cartaElegidaMaquina.print(29, 18);
-        jugador2.removeCarta(indiceCartaPrograma);
         return cartaElegidaMaquina;
     }
 
     public CartaBrisca juegaHumano() {
-        int indiceCartaJugador = sc.nextInt();
-        CartaBrisca cartaElegidaJugador = jugador1.getCarta(indiceCartaJugador - 1);
+        int indiceCartaJugador = 0;
+        Amico.subraya(true);
+        Amico.cursorXY(33, 12);
+        while (indiceCartaJugador < 1 || indiceCartaJugador > 3) {
+            try {
+                indiceCartaJugador = sc.nextInt();
+            } catch (InputMismatchException e) {
+                // Ignoramos Excepcion
+            }
+            Amico.cursorXY(33, 12);
+        }
+        Amico.subraya(false);
+        CartaBrisca cartaElegidaJugador = jugador1.cartas.remove(indiceCartaJugador - 1);
         cartaElegidaJugador.print(12, 18);
-        jugador1.removeCarta(indiceCartaJugador - 1);
 
         return cartaElegidaJugador;
     }

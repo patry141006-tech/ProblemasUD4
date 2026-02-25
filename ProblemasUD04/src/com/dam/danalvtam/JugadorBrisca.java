@@ -6,7 +6,7 @@ import java.util.List;
 public class JugadorBrisca {
     private boolean humano;
     private int puntos;
-    private List<CartaBrisca> cartas= new ArrayList<>();
+    public List<CartaBrisca> cartas= new ArrayList<>();
 
     public JugadorBrisca(boolean humano) {
         this.humano = humano;
@@ -30,15 +30,4 @@ public class JugadorBrisca {
         return puntos;
     }
 
-    public CartaBrisca getCarta(int i){
-        return cartas.get(i);
-    }
-
-    public boolean quedanCartas(){
-        return cartas.size()>0;
-    }
-
-    public void removeCarta(int i){
-        cartas.remove(i);
-    }
 }

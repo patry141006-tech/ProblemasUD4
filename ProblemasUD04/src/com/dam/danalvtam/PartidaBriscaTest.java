@@ -38,4 +38,15 @@ public class PartidaBriscaTest {
         boolean resultado2 = partida.ganaPrimera(c1, c2, false, Palo.BASTOS);
         assertFalse(resultado2);
     }
+
+        @Test
+    public void testGanaPrimeraCartasMismoPaloConTriunfo() {
+        PartidaBrisca partida = new PartidaBrisca();
+        CartaBrisca c1 = new CartaBrisca(1, Palo.BASTOS);
+        CartaBrisca c2 = new CartaBrisca(11, Palo.BASTOS);
+        boolean resultado1 = partida.ganaPrimera(c1, c2, true, Palo.BASTOS);
+        assertTrue(resultado1);
+        boolean resultado2 = partida.ganaPrimera(c1, c2, false, Palo.BASTOS);
+        assertTrue(resultado2);
+    }
 }
