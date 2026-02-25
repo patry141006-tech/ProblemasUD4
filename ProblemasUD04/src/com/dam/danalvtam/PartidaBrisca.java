@@ -79,7 +79,7 @@ public class PartidaBrisca extends MazoCartasBrisca {
                 cartaElegidaJugador = juegaHumano();
             }
 
-            if (ganaPrimera(cartaElegidaJugador, cartaElegidaMaquina)) {
+            if (ganaPrimera(cartaElegidaJugador, cartaElegidaMaquina, jugador1Empieza, mazo.cartas.get(0).getPalo())) {
                 jugador1.sumarPuntos(cartaElegidaJugador.cuantosPuntos());
                 jugador1.sumarPuntos(cartaElegidaMaquina.cuantosPuntos());
                 jugador1Empieza = true;
@@ -119,18 +119,22 @@ public class PartidaBrisca extends MazoCartasBrisca {
         return cartaElegidaJugador;
     }
 
-    public boolean ganaPrimera(CartaBrisca primera, CartaBrisca segunda) {
-        if (primera.getPalo() == cartas.get(0).getPalo() &&
-                segunda.getPalo() != cartas.get(0).getPalo()) {
+    public boolean ganaPrimera(CartaBrisca primera, CartaBrisca segunda, boolean empiezaJ1, Palo triunfo) {
+        if (primera.getPalo() == triunfo &&
+                segunda.getPalo() != triunfo) {
             return true;
         }
-        if (segunda.getPalo() == cartas.get(0).getPalo() &&
-                primera.getPalo() != cartas.get(0).getPalo()) {
+        if (segunda.getPalo() == triunfo &&
+                primera.getPalo() != triunfo) {
             return false;
         }
         if (primera.getPalo() == segunda.getPalo()) {
-            return primera.cuantosPuntos() > segunda.cuantosPuntos();
+            return primera.compareTo(segunda) > 0;
         }
-        return true;
+
+        if (empiezaJ1) {
+            return true;
+        }
+        return false;
     }
 }
