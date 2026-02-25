@@ -35,7 +35,7 @@ public class PartidaBrisca extends MazoCartasBrisca {
         Amico.cursorXY(23, 11);
         System.out.print("Carta 3");
         Amico.cursorXY(41, 4);
-        System.out.print("QUEDAN " + mazo.cuantasQuedan());
+        System.out.print("QUEDAN " + (mazo.cuantasQuedan() <= 0 ? "0" : mazo.cuantasQuedan()));
 
         Amico.cursorXY(4, 14);
         System.out.print("PUNTOS DE JUGADOR " + jugador1.getPuntos());
@@ -51,11 +51,11 @@ public class PartidaBrisca extends MazoCartasBrisca {
             jugador1.cartas.get(0).print(2, 3);
             jugador1.cartas.get(1).print(12, 3);
             jugador1.cartas.get(2).print(22, 3);
-        } catch (NullPointerException e) {
+        } catch (IndexOutOfBoundsException e) {
             // Capturamos Excepcion de las cartas
         }
         mazo.getMuestra().print(55, 3);
-        if (mazo.cuantasQuedan() > 0) { 
+        if (mazo.cuantasQuedan() > 0) {
             jugador1.cartas.get(0).printReverso(40, 5);
         }
 
@@ -92,16 +92,20 @@ public class PartidaBrisca extends MazoCartasBrisca {
                 jugador1Empieza = true;
                 Amico.cursorXY(45, 20);
                 System.out.print("USTED HA GANADO. Pulse ENTER...");
-                jugador1.agregarCarta(mazo.extraerCarta());
-                jugador2.agregarCarta(mazo.extraerCarta());
+                if (mazo.cuantasQuedan() > 0) {
+                    jugador1.agregarCarta(mazo.extraerCarta());
+                    jugador2.agregarCarta(mazo.extraerCarta());
+                }
             } else {
                 jugador2.sumarPuntos(cartaElegidaJugador.cuantosPuntos());
                 jugador2.sumarPuntos(cartaElegidaMaquina.cuantosPuntos());
                 jugador1Empieza = false;
                 Amico.cursorXY(45, 20);
                 System.out.print("USTED HA PERDIDO. Pulse ENTER...");
-                jugador2.agregarCarta(mazo.extraerCarta());
-                jugador1.agregarCarta(mazo.extraerCarta());
+                if (mazo.cuantasQuedan() > 0) {
+                    jugador2.agregarCarta(mazo.extraerCarta());
+                    jugador1.agregarCarta(mazo.extraerCarta());
+                }
             }
             sca.nextLine();
         }
@@ -120,7 +124,7 @@ public class PartidaBrisca extends MazoCartasBrisca {
         int indiceCartaJugador = 0;
         Amico.subraya(true);
         Amico.cursorXY(33, 12);
-        while (indiceCartaJugador < 1 || indiceCartaJugador > 3) {
+        while (indiceCartaJugador < 1 || indiceCartaJugador > jugador1.cartas.size()) {
             try {
                 indiceCartaJugador = sc.nextInt();
             } catch (InputMismatchException e) {

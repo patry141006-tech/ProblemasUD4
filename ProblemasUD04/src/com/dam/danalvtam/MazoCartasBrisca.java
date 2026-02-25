@@ -48,8 +48,8 @@ public class MazoCartasBrisca {
     }
 
     public CartaBrisca extraerCarta() {
-        if (marcaAgua == -1) {
-            return null;
+        if (marcaAgua < 0) {
+            throw new IllegalStateException("No quedan cartas en el mazo");
         } else {
             CartaBrisca devolver = cartas.get(marcaAgua);
             marcaAgua--;
