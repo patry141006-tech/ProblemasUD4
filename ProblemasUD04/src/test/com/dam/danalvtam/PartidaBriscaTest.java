@@ -1,9 +1,13 @@
-package com.dam.danalvtam;
+package test.com.dam.danalvtam;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import com.dam.danalvtam.CartaBrisca;
+import com.dam.danalvtam.Palo;
+import com.dam.danalvtam.PartidaBrisca;
 
 public class PartidaBriscaTest {
     @Test
